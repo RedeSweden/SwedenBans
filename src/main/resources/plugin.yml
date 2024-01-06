@@ -1,95 +1,68 @@
-name: MaxBans
-version: 2.7 #Release
-main: org.maxgamer.maxbans.MaxBans
-authors: [Darekfive, Netherfoam, FabioZumbi12]
+name: SwedenBans
+version: '${project.version}'
+main: com.redesweden.swedenbans.SwedenBans
+authors: [Darekfive, Netherfoam, FabioZumbi12, rachzy]
 
 soft-depend: [HeroChat]
 
-description: "A Rock Solid and Feather Light banning plugin!"
-website: http://maxgamer.org
+description: "Plugin de banimentos do Rede Sweden, forkado do MaxBans"
+website: redesweden.com
 
 permissions:
-    maxbans.ban:
+    swedenbans.ban:
         description: Allows a player to ban others.
         default: op
-    maxbans.unban:
+    swedenbans.unban:
         description: Allows a player to unban others.
         default: op
-    maxbans.tempban:
+    swedenbans.tempban:
         description: Allows a player to tempban others.
         default: op
-    maxbans.tempipban:
+    swedenbans.tempipban:
         description: Allows a player to temp IP ban others.
         default: op
-    maxbans.ipban:
+    swedenbans.ipban:
         description: Allows a player to IP ban others
         default: op
-    maxbans.immune:
-        description: Allows a player to grant/remove admin immunity to punishments
-        default: op
-    maxbans.mute:
+    swedenbans.mute:
         description: Allows a player to mute/unmute others.
         default: op
-    maxbans.unmute:
+    swedenbans.unmute:
         description: Allows a player to unmute others.
         default: op
-    maxbans.tempmute:
+    swedenbans.tempmute:
         description: Allows a player to temp mute others.
         default: op
-    maxbans.checkban:
+    swedenbans.checkban:
         description: Allows a player to check others ban info
         default: op
-    maxbans.checkban.self:
+    swedenbans.checkban.self:
         description: Allows a player to check their own ban info (and warnings)
         default: true
-    maxbans.checkip:
+    swedenbans.checkip:
         descriptions: Allows a player to lookup another players IP address
         default: op
-    maxbans.dupeip:
-        description: Allows a player to check other accounts that use the same IP address as the given one
-        default: op
-    maxbans.warn:
+    swedenbans.warn:
         description: Allows a player to give out warnings to others.
         default: op
-    maxbans.unwarn:
+    swedenbans.unwarn:
         description: Removes the most recent warning from a player
         default: op
-    maxbans.clearwarnings:
+    swedenbans.clearwarnings:
         description: Allows a player to delete all warnings for a given player.
         default: op
-    maxbans.kick:
+    swedenbans.kick:
         description: Allows a player to kick others with a reason
         default: op
-    maxbans.whitelist:
-        description: Allows a player to use /mbwhitelist command.
-        default: op
-    maxbans.lockdown.use:
-        description: Allows a player to use /lockdown on|off.
-        default: op
-    maxbans.lockdown.bypass:
-        description: Allows a player to enter the server if lockdown is enabled
-        default: op
-    maxbans.history:
-        description: Allows the player to use /history to view recent maxbans changes
-        default: op
-    maxbans.forcespawn:
-        description: Allows a player to use /forcespawn on another player. This teleports them to the spawn.
-        default: op
-    maxbans.reload:
+    swedenbans.reload:
         description: Allows a player to use /mbreload, reloading MaxBans from scratch.
         default: op
-    maxbans.import:
-        description: Allows a player to use /mbimport, importing bans.
+    swedenbans.notify:
+        description: Allows a player to see the ban notifications
         default: op
-    maxbans.export:
-        description: Allows a player to use /mbexport, exporting bans.
-        default: op
-    maxbans.seesilent:
-        description: Allows a player to see other players using silent ban commands
-        default: op
-    maxbans.seebroadcast:
-        description: Allows a player to see other players using regular ban commands (Not silent ones)
-        default: true
+    swedenbans.seebroadcast:
+        description: Allows a player to see all the broadcasts
+        default: not op
 
 commands:
     uuid:
@@ -161,7 +134,7 @@ commands:
         usage: /kick <player> [reason]
         aliases: [mbkick]
     lockdown:
-        description: Prevents anyone without maxbans.lockdown.bypass from joining.
+        description: Prevents anyone without swedenbans.lockdown.bypass from joining.
         usage: /lockdown [reason]
         aliases: [mblockdown]
     history:
@@ -178,7 +151,7 @@ commands:
     mb:
         description: Displays MaxBans commands that you have access to
         usage: /mb
-        aliases: [maxbans]
+        aliases: [swedenbans]
     mbimport:
         description: Imports a set of bans
         usage: /mbimport nameOfPlugin

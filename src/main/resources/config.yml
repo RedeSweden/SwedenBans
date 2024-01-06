@@ -46,8 +46,8 @@ warnings:
     #Otherwise, the command will be executed by CONSOLE.
     #You might want to use -s in these commands (To stop them broadcasting messages to players)
     actions:
-        2: '/kick {name} Final Warning: \n{reason}'
-        3: '/tempban {name} 1 hour Reached Max Warnings:\n{reasons}'
+        2: '/kick {name} {staff} Último alerta: \n{reason}'
+        3: '/tempban {name} {staff} 1 dia Você atingiu o limite de warnings:\n{reasons}'
     #After receiving this many warnings, they will be all deleted.
     #If 'actions' has an action for a number higher than this, then the action will never be
     #done... Because this resets it to 0
@@ -61,27 +61,27 @@ warnings:
 update-check: true
 
 #Accepts colorcodes. (v1.2)
-default-reason: "Misconduct"
+default-reason: "Não informado."
 #Appeal-message accepts color codes, like &a and &4... Set it to "" to disable this. Accepts new line characters, just add \n where you want a new line.
-appeal-message: "No appeal website set :("
+appeal-message: "\n§§\n&cAcredita que sua punição foi injusta? \n&cFaça sua &c&lAPPEAL &cem nosso &c&lDISCORD&c:\n&bhttps://discord.gg/sCY86dYBbm\n§§\n&cAs provas de sua punição serão enviadas em até 24h em nosso Discord."
 
 #The two char colors used that STAFF will see.
 #Usually, primary = text, and secondary = variables (Like ban reason)
 #0-9,a-f are valid. Also any Bukkit ChatColor is valid (Eg RED, AQUA, DARK_GRAY)
 color:
-    primary: f
-    secondary: a
+    primary: c
+    secondary: e
 
 #Maximum tempban time, in seconds. 604800 is a week.
-MaxTempbanTime: 604800
+MaxTempbanTime: 2592000
 
 
 #This applies to kick, ban, and anything else.
 kick-colors:
     #0-9,a-f are valid. Also any Bukkit ChatColor is valid (Eg RED, AQUA, DARK_GRAY)
-    reason: f #"Misconduct"
-    regular: f #"By"
-    banner: f #"Netherfoam"
+    reason: e #"Misconduct"
+    regular: c #"By"
+    banner: e #"Netherfoam"
     time: f #4 hours 59 minutes remaining.
 
 
@@ -139,9 +139,9 @@ sync:
 
 database:
     mysql: false
-    user: root
-    pass: passwd
+    user: sweden
+    pass: sweden
     host: localhost
     port: 3306
-    name: maxbans
+    name: sweden
     read-only: false

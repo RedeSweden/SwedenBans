@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>br.net.fabiozumbi12</groupId>
-  <artifactId>MaxBans</artifactId>
-  <version>2.7.0</version>
+  <groupId>com.redesweden</groupId>
+  <artifactId>SwedenBans</artifactId>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>MaxBans</name>
+  <name>SwedenBans</name>
   <url>http://maven.apache.org</url>
 
   <properties>

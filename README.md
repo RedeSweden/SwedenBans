@@ -1,11 +1,7 @@
-MaxBans
+SwedenBans
 =======
 
-MaxBans is a project I've been writing for my server, MaxGamer. I struggled to find a banning plugin that wasn't a joke, and the good plugins were all designed for Premium servers anyway. Nothing gave us the tools that SHOULD have been out there - Like temp mutes, temp IP bans, duplicate IP lookups, and good autocompletion!
-
-It is thoroughly tested on an Offline-Mode server, so you can bet it's rock solid and feather light!
-
-Dependencies are in lib/ folder, and also requires CraftBukkit or Spigot which are freely available online (Last compiled on Bukkit for Minecraft 1.6)
+O SwedenBans é um Fork do plugin MaxBans com funções designadas especialmente para a Rede Sweden.
 
 Databases
 =======
