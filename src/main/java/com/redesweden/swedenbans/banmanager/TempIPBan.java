@@ -22,6 +22,6 @@ public class TempIPBan extends IPBan implements Temporary
     }
     
     public String getKickMessage() {
-        return Msg.get("disconnection.you-are-temp-ipbanned", new String[] { "reason", "banner", "time", "appeal-message" }, new String[] { this.getReason(), this.getBanner(), Util.getTimeUntil(this.expires), SwedenBans.instance.getBanManager().getAppealMessage() });
+        return Msg.get("disconnection.you-are-temp-ipbanned", new String[] { "reason", "banner", "time", "appeal-message" }, new String[] { this.getReason(), this.getBanner(), Util.getTimeUntil(this.expires), SwedenBans.instance.getBanManager().getAppealMessage(this.getBanner(), this.getId()) });
     }
 }

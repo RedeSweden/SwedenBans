@@ -58,6 +58,6 @@ public class RangeBan extends Punishment implements Comparable<RangeBan>
     }
     
     public String getKickMessage() {
-        return Msg.get("disconnection.you-are-rangebanned", new String[] { "reason", "banner", "appeal-message", "range" }, new String[] { this.getReason(), this.getBanner(), SwedenBans.instance.getBanManager().getAppealMessage(), this.toString() });
+        return Msg.get("disconnection.you-are-rangebanned", new String[] { "reason", "banner", "appeal-message", "range" }, new String[] { this.getReason(), this.getBanner(), SwedenBans.instance.getBanManager().getAppealMessage(this.getBanner(), this.getId()), this.toString() });
     }
 }

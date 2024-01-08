@@ -63,7 +63,7 @@ update-check: true
 #Accepts colorcodes. (v1.2)
 default-reason: "Não informado."
 #Appeal-message accepts color codes, like &a and &4... Set it to "" to disable this. Accepts new line characters, just add \n where you want a new line.
-appeal-message: "\n§§\n&cAcredita que sua punição foi injusta? \n&cFaça sua &c&lAPPEAL &cem nosso &c&lDISCORD&c:\n&bhttps://discord.gg/sCY86dYBbm\n§§\n&cAs provas de sua punição serão enviadas em até 24h em nosso Discord."
+appeal-message: "\n§§\n&cAcredita que sua punição foi injusta? \n&cFaça sua &c&lAPPEAL &cem nosso &c&lDISCORD&c:\n&bhttps://discord.gg/sCY86dYBbm\n§cID da Punição: §e{id}\n§§\n&cAs provas de sua punição serão enviadas em até 24h em nosso Discord."
 
 #The two char colors used that STAFF will see.
 #Usually, primary = text, and secondary = variables (Like ban reason)

@@ -10,6 +10,6 @@ public class IPBan extends Ban
     }
     
     public String getKickMessage() {
-        return Msg.get("disconnection.you-are-ipbanned", new String[] { "reason", "banner", "appeal-message" }, new String[] { this.getReason(), this.getBanner(), SwedenBans.instance.getBanManager().getAppealMessage() });
+        return Msg.get("disconnection.you-are-ipbanned", new String[] { "reason", "banner", "appeal-message" }, new String[] { this.getReason(), this.getBanner(), SwedenBans.instance.getBanManager().getAppealMessage(this.getBanner(), this.getId()) });
     }
 }

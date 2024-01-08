@@ -23,6 +23,6 @@ public class TempRangeBan extends RangeBan implements Temporary
     }
     
     public String getKickMessage() {
-        return Msg.get("disconnection.you-are-temp-rangebanned", new String[] { "reason", "banner", "appeal-message", "range", "time" }, new String[] { this.getReason(), this.getBanner(), SwedenBans.instance.getBanManager().getAppealMessage(), this.toString(), Util.getTimeUntil(this.expires) });
+        return Msg.get("disconnection.you-are-temp-rangebanned", new String[] { "reason", "banner", "appeal-message", "range", "time" }, new String[] { this.getReason(), this.getBanner(), SwedenBans.instance.getBanManager().getAppealMessage(this.getBanner(), this.getId()), this.toString(), Util.getTimeUntil(this.expires) });
     }
 }
