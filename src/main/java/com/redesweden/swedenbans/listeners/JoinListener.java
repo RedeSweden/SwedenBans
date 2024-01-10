@@ -136,14 +136,6 @@ public class JoinListener extends ListenerSkeleton
             final RangeBan rb = this.getPlugin().getBanManager().getBan(ip);
             if (rb != null) {
                 e.disallow(PlayerLoginEvent.Result.KICK_OTHER, rb.getKickMessage());
-                if (this.getPlugin().getConfig().getBoolean("notify", true)) {
-                    final String msg = Formatter.secondary + player.getName() + Formatter.primary + " (" + ChatColor.RED + address + Formatter.primary + ")" + " tried to join, but is " + ((rb instanceof Temporary) ? "temp " : "") + "RangeBanned.";
-                    for (final Player p : Bukkit.getOnlinePlayers()) {
-                        if (p.hasPermission("swedenbans.notify")) {
-                            p.sendMessage(msg);
-                        }
-                    }
-                }
                 return;
             }
             if (this.getPlugin().getBanManager().getDNSBL() != null) {
@@ -160,13 +152,5 @@ public class JoinListener extends ListenerSkeleton
         }
         e.setResult(PlayerLoginEvent.Result.KICK_OTHER);
         e.setKickMessage(ban.getKickMessage());
-        if (this.getPlugin().getConfig().getBoolean("notify", true)) {
-            final String msg2 = ((ban == null) ? Formatter.secondary : ChatColor.RED) + player.getName() + Formatter.primary + " tried to join, but is " + ((ban instanceof Temporary) ? "temp " : "") + "banned!";
-            for (final Player p2 : Bukkit.getOnlinePlayers()) {
-                if (p2.hasPermission("swedenbans.notify")) {
-                    p2.sendMessage(msg2);
-                }
-            }
-        }
     }
 }

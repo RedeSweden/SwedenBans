@@ -42,14 +42,6 @@ public class BungeeListener implements PluginMessageListener
                             final RangeBan rb = BungeeListener.this.plugin.getBanManager().getBan(address);
                             if (rb != null) {
                                 player.kickPlayer(rb.getKickMessage());
-                                if (BungeeListener.this.plugin.getConfig().getBoolean("notify", true)) {
-                                    final String msg = Formatter.secondary + player.getName() + Formatter.primary + " (" + ChatColor.RED + address + Formatter.primary + ")" + " tried to join, but is " + ((rb instanceof Temporary) ? "temp " : "") + "RangeBanned.";
-                                    for (final Player p : Bukkit.getOnlinePlayers()) {
-                                        if (p.hasPermission("swedenbans.notify")) {
-                                            p.sendMessage(msg);
-                                        }
-                                    }
-                                }
                                 return;
                             }
                             if (BungeeListener.this.plugin.getBanManager().getDNSBL() != null) {
