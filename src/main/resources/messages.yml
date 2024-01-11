@@ -1,7 +1,7 @@
 disconnection:
     you-were-kicked: "&cVocê foi expulso!\n&cMotivo: &e{reason} \n&cStaff: &e{banner} \n\n&cFique tranquilo, isso não é um banimento. \n&cVocê pode relogar no servidor normalmente."
-    you-are-banned: "&cVocê foi banido permanentemente!\n&cMotivo: &e{reason}\n&cStaff: &e{banner}&c.\n{appeal-message}"
-    you-are-ipbanned: "&cVocê foi banido permanentemente!\n&cMotivo: &e{reason}\n&cStaff: &e{banner}&c.\n{appeal-message}"
+    you-are-banned: "&cVocê foi banido permanentemente!\n&cMotivo: &e{reason}\n&cStaff: &e{banner}&c\n{appeal-message}"
+    you-are-ipbanned: "&cVocê foi banido permanentemente!\n&cMotivo: &e{reason}\n&cStaff: &e{banner}&c\n{appeal-message}"
     you-are-temp-banned: "&cVocê foi banido temporariamente!\n&cMotivo: &e{reason}\n&cStaff: &e{banner}\n&cSua punição expira em: &e{time}\n{appeal-message}"
     you-are-temp-ipbanned: "&cVocê foi banido temporariamente!\n&cMotivo: &e{reason}\n&cStaff: &e{banner}\n&cSua punição expira em: &e{time}\n{appeal-message}"
     

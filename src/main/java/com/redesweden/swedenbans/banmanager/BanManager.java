@@ -89,8 +89,8 @@ public class BanManager
     }
     
     public String getAppealMessage(String banner, String nickname) {
-        String sql = "SELECT id FROM `punicoes` WHERE `staff` = ? AND `player` = ? ORDER BY id DESC LIMIT 1";
-        int id = 0;
+        String sql = "SELECT uniqueId FROM `punicoes` WHERE `staff` = ? AND `player` = ? ORDER BY id DESC LIMIT 1";
+        String id = null;
 
         try {
             PreparedStatement statement = this.db.getConnection().prepareStatement(sql);
@@ -100,14 +100,14 @@ public class BanManager
             ResultSet results = statement.executeQuery();
 
             if(results.next()) {
-                id = results.getInt("id");
+                id = results.getString("uniqueId");
             }
         } catch (SQLException ex) {
             Bukkit.getLogger().warning("Ocorreu um erro ao pegar os dados da punição de " + nickname);
             Bukkit.getLogger().warning(ex.getMessage());
         }
 
-        return this.appealMessage.replace("{id}", id == 0 ? "Não encontrado" : String.valueOf(id));
+        return this.appealMessage.replace("{id}", id == null ? "Não encontrado" : "#" + id);
     }
     
     public void setAppealMessage(final String msg) {

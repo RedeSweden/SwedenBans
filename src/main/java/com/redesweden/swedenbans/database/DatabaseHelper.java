@@ -149,10 +149,12 @@ public class DatabaseHelper
     }
 
     public static void createPunicoesTable(final Database db) {
-        final String query = "CREATE TABLE punicoes (id INT NOT NULL AUTO_INCREMENT, player VARCHAR(32) NOT NULL, staff VARCHAR(32) NOT NULL, tipo VARCHAR(64) NOT NULL, motivo VARCHAR(64) NOT NULL, provas VARCHAR(128), anunciado BOOLEAN NOT NULL DEFAULT 0, ativo BOOLEAN NOT NULL DEFAULT 1, PRIMARY KEY (id));";
+        final String query = "CREATE TABLE punicoes (id INT NOT NULL AUTO_INCREMENT, uniqueId VARCHAR(8), player VARCHAR(32) NOT NULL, staff VARCHAR(32) NOT NULL, tipo VARCHAR(64) NOT NULL, motivo VARCHAR(64) NOT NULL, provas VARCHAR(128), anunciado BOOLEAN NOT NULL DEFAULT 0, ativo BOOLEAN NOT NULL DEFAULT 1, PRIMARY KEY (id))";
+        final String trigger = "CREATE TRIGGER before_insert_punicoes BEFORE INSERT ON punicoes FOR EACH ROW BEGIN SET NEW.uniqueId = UPPER(SUBSTRING(MD5(RAND()) FROM 1 FOR 8)); END;";
         try {
             final Statement st = db.getConnection().createStatement();
             st.execute(query);
+            st.execute(trigger);
         }
         catch (SQLException e) {
             e.printStackTrace();
